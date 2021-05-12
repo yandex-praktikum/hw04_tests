@@ -44,12 +44,13 @@ jobs:
     - name: Check migrations
       run: |
         python yatube/manage.py makemigrations --check --no-input
+        tree
     - name: Test with pytest
       env:
         SECRET_KEY: "5UP3R-53CR3T-K3Y-FR0M-TurboKach"
         DJANGO_SETTINGS_MODULE: yatube.settings
         DEBUG: 1
         ALLOWED_HOSTS: "*"
-        PYTHONPATH: yatube/
+        # PYTHONPATH: yatube/
       run: |
         py.test
