@@ -113,7 +113,7 @@ class TestPostEditView:
         )
         post = Post.objects.filter(author=post_with_group.author, text=text, group=post_with_group.group).first()
         assert post is not None, (
-            'Проверьте, что вы изменили пост при отправки формы на странице `/posts/<post_id>/edit/`'
+            'Проверьте, что вы изменили пост при отправке формы на странице `/posts/<post_id>/edit/`'
         )
         assert response.url.startswith(f'/posts/{post_with_group.id}'), (
             'Проверьте, что перенаправляете на страницу поста `/posts/<post_id>/`'
